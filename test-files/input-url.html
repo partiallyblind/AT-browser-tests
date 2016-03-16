@@ -1,37 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>test file: input type=url element</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input type=url element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>input type=url</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Control is keyboard accessible:
+						<ul>
+							<li>#3.1: Control MUST be focusable</li>
+							<li>#3.2: MUST be able to type and select text</li>
+							<li>#3.3: MUST be able to submit a value</li>
+						</ul>
+					</li>
+					<li>#4: Error message has correct mapping [TODO: where is this defined?]</li>
+				</ul>
+			</div>
 
-<body>
-<!-- h1 includes element and attribute(s) in test -->
-<h1><code>input type=url</code> element</h1>
-<!-- element and attribute(s) working example -->
-<p>
-  <input type="url">
-</p>
-<h2>with label </h2>
-<p>
-  <label>your web site 
-    <input type="url"></label></p>
-<h2>with label + placeholder</h2>
-<p><label>your web site <input type="url" placeholder="http://"></label></p>
-<h2>with label + placeholder + required</h2>
-<p><label>your web site <input type="url" placeholder="http://" required></label></p>
-<h2>with label + placeholder + readonly</h2>
-<p><label>your web site <input type="url" placeholder="http://" readonly></label></p>
-<h2>with label + placeholder + disabled</h2>
-<p><label>your web site <input type="url" placeholder="http://" disabled></label></p>
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html/forms.html#url-state-(type=url)">HTML5 input type=url element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-input-url">HTML Accessibility API Mappings for input type=url element without list attribute</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#role-map-textbox">Core Accessibility API Mappings for textbox role</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-input-textetc-autocomplete">HTML Accessibility API Mappings for input type=url element with list attribute</a> <a href="datalist.html#di-001">[Test: DI-001]</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#role-map-combobox">Core Accessibility API Mappings for combobox role</a> <a href="datalist.html#di-001">[Test: DI-001]</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#ariaOwns">Core Accessibility API Mappings for aria-owns property</a> <a href="datalist.html#di-001">[Test: DI-001]</a></li>
+				</ul>
+			</div>
+		</div>
 
-  <!-- element and attribute(s) code -->
-<h2>Code</h2>
-<p>&lt;label&gt;your web site &lt;input type=&quot;url&quot;&gt;&lt;/label&gt;</p>
-<!-- link(s) to element and attribute(s) in test -->
-<h2>Reference</h2>
-<p>
-<a href="http://www.w3.org/TR/html/forms.html#url-state-(type=url)">HTML5 input type=url element</a>
-</p>
-</body>
+		<div class="test">
+			<h2 class="test-title" id="ui-001">Test ui-001: Unlabelled input type="url"</h2>
+
+			<div class="test-case">
+				<form>
+					<input id="input1" type="url" />
+				</form>
+			</div>
+		
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;input id="input1" type="url" /></code></pre>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ui-002">Test ui-002: Input type="url" with label</h2>
+
+			<div class="test-case">
+				<form>
+					<label>Your web site <input id="input2" type="url" /></label>
+				</form>
+			</div>
+
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;label>Your web site &lt;input id="input2" type="url" />&lt;/label></code></pre>
+		</div>
+	</body>
 </html>

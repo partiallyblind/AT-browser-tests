@@ -1,31 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>test file: footer element</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test file: footer element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>footer</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+				</ul>
+			</div>
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html/sections.html#the-footer-element">HTML5 footer element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-footer-ancestorbody">HTML Accessibility API Mappings for footer element (nearest sectioning content/root is body)</a> [Test: FT-001]</li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#role-map-contentinfo">Core Accessibility API Mappings for contentinfo role</a> [Test: FT-001]</li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-footer">HTML Accessibility API Mappings for footer element (nearest sectioning content/root is not body)</a> [Test: FT-002]</li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#https://www.w3.org/TR/html-aam-1.0/#section-and-grouping-element-accessible-name-calculation">Accessible Name Calculation</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#https://www.w3.org/TR/html-aam-1.0/#section-and-grouping-element-accessible-description-calculation">Accessible Description Calculation</a></li>
+				</ul>
+			</div>
+		</div>
 
-<body>
-<!-- h1 includes element and attribute(s) in test -->
-<h1><code>footer</code> element</h1>
-<!-- element and attribute(s) working example -->
-<footer>Lorem ipsum...</footer>
-<article>
-<footer>Lorem ipsum...</footer>
-</article>
-<!-- element and attribute(s) code -->
-<h2>Code</h2>
-<p><code>
-&lt;footer&gt;Lorem ipsum...&lt;/footer&gt;
-</code></p>
-<p><code>&lt;article&gt;
-  &lt;footer&gt;Lorem ipsum...&lt;/footer&gt;
-  &lt;/article&gt;
-</code></p>
-<!-- link(s) to element and attribute(s) in test -->
-<h2>Reference</h2>
-<p>
-<a href="http://www.w3.org/TR/html/sections.html#the-footer-element">HTML5 footer element</a>
-</p>
-</body>
+		<div class="test">
+			<h2 class="test-title" id="ft-001">Test ft-001: Footer element,  sectioning content/root is body</h2>
+
+			<div class="test-case">			
+				<footer>Lorem ipsum...</footer>
+			</div>
+
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;footer>Lorem ipsum...&lt;/footer></code></pre>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ft-002">Test ft-002: Footer element, sectioning content/root is <em>not</em> body</h2>
+
+			<div class="test-case">
+				<article>
+					<footer>Lorem ipsum...</footer>
+				</article>
+			</div>
+
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;article>
+	&lt;footer>Lorem ipsum...&lt;/footer>
+&lt;/article></code></pre>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ft-003">Test ft-003: Footer with <code>title</code> attribute.</h2>
+
+			<div class="test-case">			
+				<article>
+					<footer title="title attribute">Title should be used as accessible name.</footer>
+				</article>
+			</div>
+
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;article>
+	&lt;footer title="title attribute">Title should be used as accessible name.&lt;/footer>
+&lt;/article></code></pre>
+		</div>
+
+	</body>
 </html>

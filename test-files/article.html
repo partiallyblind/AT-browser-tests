@@ -1,64 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>test file: article element</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test file: article element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>article</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+				</ul>
+			</div>
 
-<body>
-<!-- h1 includes element and attribute(s) in test -->
-<h1><code>article</code> element</h1>
-<ul>
-<li>Plain</li>
-<li>With <code>&lt;h1&gt;</code></li>
-<li>With <code>aria-label</code>
-<li>With <code>&lt;h1&gt;</code> referenced by <code>aria-labelledby</code></li>
-</ul>
-<!-- element and attribute(s) working example -->
-<article>
-Lorem ipsum...
-</article>
-<hr>
-<article>
-<h1>Once upon a time</h1>
-Lorem ipsum...
-</article>
-<hr>
-<article aria-label="Once upon a time">
-Lorem ipsum...
-</article>
-<hr>
-<article aria-labelledby="article-title">
-<h1 id="article-title">Once upon a time</h1>
-Lorem ipsum...
-</article>
-<!-- element and attribute(s) code -->
-<h2>Code</h2>
-<pre><code>&lt;article&gt;
-Lorem ipsum...
-&lt;/article&gt;
-</code></pre>
-<hr>
-<pre><code>&lt;article&gt;
-&lt;h1&gt;Once upon a time&lt;/h1&gt;
-Lorem ipsum...
-&lt;/article&gt;
-</code></pre>
-<hr>
-<pre><code>&lt;article aria-label=&quot;Once upon a time&quot;&gt;
-Lorem ipsum...
-&lt;/article&gt;
-</code></pre>
-<hr>
-<pre><code>&lt;article aria-labelledby=&quot;article-title&quot;&gt;
-&lt;h1 id=&quot;article-title&quot;&gt;Once upon a time&lt;/h1&gt;
-Lorem ipsum...
-&lt;/article&gt;
-</code></pre>
-<!-- link(s) to element and attribute(s) in test -->
-<h2>Reference</h2>
-<p>
-<a href="http://www.w3.org/TR/html5/sections.html#the-article-element">HTML5 article element</a>
-</p>
-</body>
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html5/sections.html#the-article-element">HTML5 article element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-article">HTML Accessibility API Mappings for article element</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#role-map-article">Core Accessibility API Mappings for article role</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#https://www.w3.org/TR/html-aam-1.0/#section-and-grouping-element-accessible-name-calculation">Accessible Name Calculation</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#https://www.w3.org/TR/html-aam-1.0/#section-and-grouping-element-accessible-description-calculation">Accessible Description Calculation</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ar-001">Test ar-001: Plain Article</h2>
+
+			<div class="test-case">
+				<article>Lorem ipsum...</article>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;article>Lorem ipsum...&lt;/article></code></pre>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ar-002">Test ar-002: Article with <code>&lt;h1></code></h2>
+
+			<div class="test-case">
+				<article>
+					<h1>Once upon a time</h1>
+					Lorem ipsum...
+				</article>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+					<pre><code>&lt;article>
+	&lt;h1>Once upon a time&lt;/h1>
+	Lorem ipsum...
+&lt;/article></code></pre>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ar-003">Test ar-003: Article with <code>aria-label</code></h2>
+
+			<div class="test-case">
+				<article aria-label="Once upon a time">Lorem ipsum...</article>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;article aria-label="Once upon a time">Lorem ipsum...&lt;/article></code></pre>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ar-004">Test ar-004: Article with <code>&lt;h1></code> referenced by <code>aria-labelledby</code></h2>
+
+			<div class="test-case">
+				<article aria-labelledby="article-title">
+					<h1 id="article-title">Once upon a time</h1>
+					Lorem ipsum...
+				</article>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;article aria-labelledby="article-title">
+	&lt;h1 id="article-title">Once upon a time&lt;/h1>
+	Lorem ipsum...
+&lt;/article></code></pre>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ar-005">Test ar-005: Article with <code>title</code> attribute</h2>
+
+			<div class="test-case">
+				<article title="title attribute">Title should be used as accessible name.</article>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;article title="title attribute">Title should be used as accessible name.&lt;/article></code></pre>
+		</div>
+
+	</body>
 </html>

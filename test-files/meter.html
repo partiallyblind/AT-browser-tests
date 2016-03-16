@@ -1,27 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>test file: meter element</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test file: meter element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>meter</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+				</ul>
+			</div>
 
-<body>
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html5/forms.html#the-meter-element">HTML5 meter element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-meter">HTML Accessibility API Mappings for meter element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#att-max">HTML Accessibility API Mappings for max attribute</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#att-min">HTML Accessibility API Mappings for min attribute</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#att-value-meter">HTML Accessibility API Mappings for value attribute</a></li>
+				</ul>
+			</div>
+		</div>
 
-<!-- h1 includes element and attribute(s) in test -->
-<h1><code>meter</code> element</h1>
+		<div class="test">
+			<h2 class="test-title" id="mr-001">Test mr-001: Meter element</h2>
 
-<!-- element and attribute(s) working example -->
+			<div class="test-case">
+				<meter id="meter1" min="0" max="100" value="83.5">fallback content</meter>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;meter id="meter1" min="0" max="100" value="83.5">fallback content&lt;/meter></code></pre>
+		</div>
 
-<p><meter min="0" max="100" value="83.5">fallback content</meter></p>
-
-<!-- element and attribute(s) code -->
-<h2>Code</h2>
-<p><code>
-&lt;p&gt;&lt;meter min=&quot;0&quot; max=&quot;100&quot; value=&quot;83.5&quot;&gt;fallback content&lt;/meter&gt;&lt;/p&gt;</code></p>
-<!-- link(s) to element and attribute(s) in test -->
-<h2>Reference</h2>
-<p>
-<a href="http://www.w3.org/TR/html5/forms.html#the-meter-element">HTML5 meter element</a>
-</p>
-</body>
+	</body>
 </html>

@@ -1,44 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>test file: canvas element</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test file: canvas element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>canvas</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: <code>drawFocusIfNeeded()</code> is supported</li>
+					<li>#3: Element has correct HTML and Core Accessibility API mappings</li>
+					<li>#4: Canvas sub-DOM is exposed</li>
+				</ul>
+			</div>
 
-<body>
-<!-- h1 includes element and attribute(s) in test -->
-<h1><code>canvas</code> element</h1>
-<!-- element and attribute(s) working example -->
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html5/scripting-1.html#the-canvas-element">HTML5 canvas element</a></li>
+					<li><a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-drawfocusifneeded">drawFocusIfNeeded() method</a> [Test: CV-002]</li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-canvas">HTML Accessibility API Mappings for canvas element</a></li>
+				</ul>
+			</div>
+		</div>
 
-<canvas id="myCanvas" width="338" height="258">
-    <p>The woman in the painting is wearing a flowing white dress. A large piece of intricately 
-  patterned fabric is draped over the side. In her right hand she holds the chain mooring the boat. Her expression 
-  is mournful. She stares at a crucifix lying in front of her. Beside it are three candles. Two have blown out.</p>
-</canvas>
+		<div class="test">
+			<h2 class="test-title" id="cv-001">Test cv-001: Canvas element</h2>
 
-<script>
-  
-	var canvas = document.getElementById('myCanvas');
-      var context = canvas.getContext('2d');
-      var imageObj = new Image();
+			<div class="test-case">				
+				<canvas id="myCanvas" width="338" height="258">
+					<p>The woman in the painting is wearing a flowing white dress. A large piece of intricately
+					patterned fabric is draped over the side. In her right hand she holds the chain mooring the boat. Her expression
+					is mournful. She stares at a crucifix lying in front of her. Beside it are three candles. Two have blown out.
+					</p>
+				</canvas>
 
-      imageObj.onload = function() {
-        context.drawImage(imageObj, 0, 0);
-      };
-      imageObj.src = '../images/shalott.jpg';
-	
-      </script>
-<!-- element and attribute(s) code -->
-<h2>Code</h2>
-<p>&lt;canvas id=&quot;myCanvas&quot; width=&quot;338&quot; height=&quot;258&quot;&gt;<br>
-&lt;p&gt;The woman in the painting is wearing a flowing white dress. A large piece of intricately <br>
-patterned fabric is draped over the side. In her right hand she holds the chain mooring the boat. Her expression <br>
-is mournful. She stares at a crucifix lying in front of her. Beside it are three candles. Two have blown out.&lt;/p&gt;<br>
-&lt;/canvas&gt;</p>
-<!-- link(s) to element and attribute(s) in test -->
-<h2>Reference</h2>
-<p>
-<a href="http://www.w3.org/TR/html5/scripting-1.html#the-canvas-element">HTML5 canvas element</a>
-</p>
-</body>
+				<script>
+					var canvas = document.getElementById('myCanvas');
+					var context = canvas.getContext('2d');
+					var imageObj = new Image();
+
+					imageObj.onload = function() {
+						context.drawImage(imageObj, 0, 0);
+					};
+					imageObj.src = '../images/shalott.jpg';
+				</script>
+			</div>
+		
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;canvas id="myCanvas" width="338" height="258">
+	&lt;p>The woman in the painting is wearing a flowing white dress. A large piece of 
+	   intricately patterned fabric is draped over the side. In her right hand she holds 
+	   the chain mooring the boat. Her expression is mournful. She stares at a crucifix 
+	   lying in front of her. Beside it are three candles. Two have blown out.&lt;/p>
+&lt;/canvas></code></pre>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="cv-002">Test cv-002: drawFocusIfNeeded() method</h2>
+			<p>The circle below must have a focus ring.</p>
+
+			<div class="test-case">				
+				<canvas id="drawFocusCanvas" width="200" height="200">
+					<button id="drawFocusButton">Focus me</button>
+				</canvas>
+
+				<script>
+					var canvas2 = document.getElementById('drawFocusCanvas'),
+					    button = document.getElementById('drawFocusButton'),
+					    context2 = canvas2.getContext('2d');
+						
+					context2.beginPath();
+					context2.arc(100, 100, 75, 0, 2 * Math.PI);
+					context2.fillStyle = '#ddd';
+					context2.fill();
+						
+					button.focus();
+					context2.drawFocusIfNeeded(button);
+				</script>
+			</div>
+		
+			<h3 class="code-title">Code</h3>
+			<pre><code>var canvas2 = document.getElementById('drawFocusCanvas'),
+    button = document.getElementById('drawFocusButton'),
+    context2 = canvas2.getContext('2d');
+						
+context2.beginPath();
+context2.arc(100, 100, 75, 0, 2 * Math.PI);
+context2.fillStyle = '#ddd';
+context2.fill();
+						
+button.focus();
+context2.drawFocusIfNeeded(button);</code></pre>
+		</div>
+	</body>
 </html>

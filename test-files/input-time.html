@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input type time element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>input type=time</code> element</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Control is keyboard accessible:
+						<ul>
+							<li>#3.1: Control MUST be focusable</li>
+							<li>#3.2: MUST be able to open time control and select a time</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="reference">	
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html5/forms.html#time-state-(type=time)">HTML5 input type=time element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-input-time">HTML Accessibility API Mappings for input type=time element</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ti-001">Test ti-001: Unlabelled input type="time"</h2>
+
+			<div class="test-case">
+				<input id="input1" type="time" />
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;input id="input2" type="time" /></code></pre>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ti-002">Test ti-002: Input type="time" with label</h2>
+
+			<div class="test-case">			
+				<label>Time of birth <input id="input2" type="time" /></label>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;label>Time of birth &lt;input id="input2" type="time" />&lt;/label></code></pre>
+		</div>
+	</body>
+</html>

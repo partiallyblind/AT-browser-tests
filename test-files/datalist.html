@@ -1,29 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>test file: input element + datalist element</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input element + datalist element</title>
+		<link rel="stylesheet" href="../style/styles.css" />
+	</head>
+	<body>
+		<h1><code>input</code> element + <code>datalist</code> elmement</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul>
+					<li>#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Control is keyboard accessible:
+						<ul>
+							<li>#3.1: Control MUST be focusable</li>
+							<li>#3.2: MUST be able to select item from list</li>
+							<li>#3.3: MUST be enter and edit text</li>
+							<li>#3.4: MUST be able to submit value</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 
-<body>
-<!-- h1 includes element and attribute(s) in test -->
-<h1><code>input</code> element + <code>datalist</code> elmement</h1>
-<!-- element and attribute(s) working example -->
-<label>sites <input list="hpurls" placeholder="text+list" type="text"></label>
-<datalist id="hpurls">
-<option value="http://www.google.com/" label="Google"></option>
-<option value="http://www.reddit.com/" label="Reddit"></option>
-</datalist>
-<!-- element and attribute(s) code -->
-<h2>Code</h2>
-<p>&lt;label&gt;sites &lt;input list=&quot;hpurls&quot; placeholder=&quot;text+list&quot; type=&quot;text&quot;&gt;&lt;/label&gt;<br>
-  &lt;datalist id=&quot;hpurls&quot;&gt;<br>
-  &lt;option value=&quot;http://www.google.com/&quot; label=&quot;Google&quot;&gt;&lt;/option&gt;<br>
-  &lt;option value=&quot;http://www.reddit.com/&quot; label=&quot;Reddit&quot;&gt;&lt;/option&gt;<br>
-&lt;/datalist&gt;</p>
-<!-- link(s) to element and attribute(s) in test -->
-<h2>Reference</h2>
-<p>
-<a href="http://www.w3.org/TR/html/forms.html#the-datalist-element">HTML5 datalist element</a></p>
-</body>
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="http://www.w3.org/TR/html/forms.html#the-datalist-element">HTML5 datalist element</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-datalist">HTML Accessibility API Mappings for datalist element</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#role-map-listbox">Core Accessibility API Mappings for listbox role</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#ariaMultiselectableFalse">Core Accessibility API Mappings for aria-multiselectable="false"</a></li>
+					<li><a href="https://www.w3.org/TR/html-aam-1.0/#el-input-textetc-autocomplete">HTML Accessibility API Mappings for input type=text, search, tel, url or email element with list attribute</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#role-map-combobox">Core Accessibility API Mappings for combobox role</a></li>
+					<li><a href="https://www.w3.org/TR/core-aam-1.1/#ariaOwns">Core Accessibility API Mappings for aria-owns property</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="di-001">Test di-001: DataList with input</h2>
+
+			<div class="test-case">		
+				<label>Sites <input id="input1" type="text" list="datalist1" /></label>
+				<datalist id="datalist1">
+					<option value="http://www.google.com/" label="Google">Google</option>
+					<option value="http://www.reddit.com/" label="Reddit">Reddit</option>
+				</datalist>
+			</div>
+			
+			<h3 class="code-title">Code</h3>
+			<pre><code>&lt;label>Sites &lt;input id="input1" type="text" list="datalist1" />&lt;/label>
+&lt;datalist id="datalist1">
+	&lt;option value="http://www.google.com/" label="Google">&lt;/option>
+	&lt;option value="http://www.reddit.com/" label="Reddit">&lt;/option>
+&lt;/datalist></code></pre>
+		</div>
+	</body>
 </html>
